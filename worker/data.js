@@ -3,7 +3,7 @@ const {Client, logger, Variables} = require("camunda-external-task-client-js"),
     path = require('path'),
     camCommon = require(path.resolve(__dirname, "./common.js"));
 
-const config = {baseUrl: "http://localhost:8080/engine-rest", use: logger, asyncResponseTimeout: 5000};
+const config = {baseUrl: "http://localhost:8095/rest", use: logger, asyncResponseTimeout: 5000};
 
 
 const client = new Client(config);

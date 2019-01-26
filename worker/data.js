@@ -17,7 +17,8 @@ client.subscribe("news", async function ({task, taskService}) {
     request(options, function (err, res, body) {
         let json = JSON.parse(body);
         const processVariables = new Variables();
-        processVariables.set("news", json.items[0].title);
+        let num = Math.floor(Math.random() * 10) + 1;
+        processVariables.set("news", json.items[num].title);
         taskService.complete(task, processVariables);
     });
 });

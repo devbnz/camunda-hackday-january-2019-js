@@ -1,16 +1,12 @@
 const {Client, logger, Variables} = require("camunda-external-task-client-js"),
-    request = require('request'),
-    path = require('path'),
-    camCommon = require(path.resolve(__dirname, "./common.js"));
+    request = require('request');
 
 const config = {baseUrl: "http://localhost:8095/rest", use: logger, asyncResponseTimeout: 5000};
-
-
 const client = new Client(config);
 
 client.subscribe("news", async function ({task, taskService}) {
     const options = {
-        url: 'https://api.bnz-power.com/camunda/hackday/news',
+        url: 'URL',
         method: 'GET'
     };
 
